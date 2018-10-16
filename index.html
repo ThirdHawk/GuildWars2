@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+      function selectOn(){
+        $('#bg').css({'filter':'grayscale(0) blur(3px)','opacity':'.8','transition-delay':'.4s','transition-duration':'1s'});
+      }
+      function selectOff(){
+        $('#bg').css({'filter':'grayscale(1) blur(3px)','opacity':'0','transition-delay':'0s','transition-duration':'.8s'});
+      }
+      function  loadInfo(){
+        location.href="html/info2.html";
+      }
+    </script>
+  </head>
+  <body id="body">
+    <div id="bg" class="bg"></div>
+    <div class="container">
+      <div onclick="loadInfo()" onmouseover="selectOn()" onmouseout="selectOff()" class="center-menu menu">
+        <img class="bg-img img1" src="img/index/gw_w1.jpg">
+        <div class="center-textarea textarea">
+          <label class="text">INFO SUL GIOCO</label>
+        </div>
+      </div>
+      <div  onmouseover="selectOn()"  onmouseout="selectOff()" class="left-menu menu">
+        <img class="bg-img img2" src="img/index/gw_races.jpg">
+        <div class="left-textarea textarea">
+          <label class="text">CLASSI E RAZZE</label>
+        </div>
+        <img class="wip-img2  w-img" src="icons/gear-hammer2.png">
+        <div class="wip-div2  w-div">
+          <label class="wip-lbl2 w-lbl">LAVORI IN CORSO...</label>
+        </div>
+      </div>
+      <div  onmouseover="selectOn()" onmouseout="selectOff()" class="right-menu menu">
+        <img class="bg-img img3" src="img/index/human_w1.jpg">
+        <div class="right-textarea textarea">
+          <label class="text">ABILITA'</label>
+      </div>
+      <img class="wip-img w-img" src="icons/gear-hammer2.png">
+      <div class="wip-div w-div">
+        <label class="wip-lbl w-lbl">LAVORI IN CORSO...</label>
+      </div>
+    </div>
+    <label class="selector-bar-top"></label>
+    <label class="selector-bar-bottom"></label>
+  </body>
+</html>
