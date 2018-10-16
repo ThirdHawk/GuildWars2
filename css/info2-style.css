@@ -1,0 +1,266 @@
+body{
+  background-color: black;
+  margin:0;
+  overflow-x: hidden;
+}
+.bg-div{
+  background:url("../img/index/brush_w3.png") no-repeat center center;
+  background-size: cover;
+  width:100%;
+  height: 100%;
+  filter:blur(20px) saturate(.4);
+  opacity:0;
+  transform:scale(1);
+  position:fixed;
+  transition-duration: 3s;
+  background-size: cover;
+}
+/*==========================================*/
+/*===================BG-DIV KEYFRAMES======================*/
+@keyframes bganim{
+  from{
+    transform:scale(1);
+  }
+  to{transform:scale(1.2);}
+}
+/*==========================================*/
+/*===================BG-DIV ONLOAD======================*/
+.bg-div-onload{
+
+  animation-name: bganim;
+  animation-duration: 7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  opacity:1;
+}
+/*==========================================*/
+.main-panel{
+  -webkit-clip-path: polygon(0 0, 75% 0, 72% 100%, 0% 100%);
+  position:relative;
+  left:2%;
+  top:10%;
+  width:60%;
+  height:80%;
+  transform-origin:left;
+  transform:scale(.85) rotateX(1deg) rotateY(6deg) rotateZ(-5deg) perspective(600px);
+  opacity:0;
+  border:solid black 7px;
+  background-color: gray;
+  overflow: hidden;
+  transition-duration: 1s;
+  z-index:3;
+}
+/*==========================================*/
+/*===================MAIN PANEL ONLOAD======================*/
+.main-panel-onload{
+  transform-origin: left;
+  transform:scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) perspective(600px);
+  opacity:1;
+  filter:saturate(1);
+  transition-duration: 1s
+}
+/*==========================================*/
+/*===================DESCRIPTION 1======================*/
+.desc1{
+  -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 16.8% 100%);
+  position:absolute;
+  top:10%;
+  left:35%;
+  width:60%;
+  height:80%;
+  transform-origin:right;
+  transform:rotateZ(-10deg) scaleY(.2) rotateX(-5deg) perspective(600px);
+  opacity:0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border:solid white 7px;
+  background-color:rgba(0,0,0,.7);
+  transition-duration: .4s;
+}
+/*==========================================*/
+/*===================DESCRIPTION ONLOAD======================*/
+.desc1-onload{
+  opacity:1;
+  transform-origin:right;
+  transform:rotateZ(0deg) rotateX(0deg) perspective(600px);
+  transition-delay: .45s;
+  transition-duration: .4s;
+}
+/*==========================================*/
+/*===================DESCRIPTION LISTS======================*/
+.desc-li1{
+  display:block;
+  position:absolute;
+  top:40%;
+  left:16%;
+  font-size: 2.3vh;
+  color:#c9c9c9;
+  opacity:1;
+}
+.desc-li2, .desc-li3{
+  display:block;
+  position:absolute;
+  top:0%;
+  left:16%;
+  font-size: 2.6vh;
+  color:#c9c9c9;
+  opacity:0;
+}
+/*==========================================*/
+/*===================MAIN PANEL ONLOAD======================*/
+.p1-img{
+  width:100%;
+  height: 100%;
+  z-index: 1;
+  position:relative;
+  left:0%;
+  transform:scale(1);
+  transition-duration: 1s
+}
+/*==========================================*/
+/*===================P1 IMG CLASSES======================*/
+
+.p1-img-default{
+  background:url("../img/info/gw_info_w6.jpg") no-repeat center center;
+  background-size:cover;
+  transition-duration: 1s;
+}
+.p1-img-next1{
+  background:url("../img/info/gw_info_w3.jpg") no-repeat center center;
+  background-size:cover;
+  left:-20%;
+  transition-duration: 1s;
+}
+.p1-img-next2{
+  background:url("../img/info/gw_info_w5.jpg") no-repeat center center;
+  background-size:cover;
+  left:-5%;
+  transition-duration: 1s;
+}
+/*==========================================*/
+/*===================TOP&BOTTOM LABELS======================*/
+.label-top{
+  position:fixed;
+  top:0%;
+  left:0%;
+  display:inline-block;
+  width:100%;
+  height:5vh;
+  background-color:black;
+  z-index: 4;
+}
+.label-bottom{
+  position:fixed;
+  top:95%;
+  left:0%;
+  display:inline-block;
+  width:100%;
+  height:60px;
+  background-color:black;
+  z-index: 4;
+}
+/*==========================================*/
+/*===================ONCLICK MAINPANEL======================*/
+ .main-panel-anim{
+   -webkit-clip-path: polygon(0 100%, 0 0, 68% 0, 90% 100%);
+   width:70%;
+   left:5%;
+   filter:saturate(1);
+   transition-duration: 1s;
+ }
+ .p1-img-anim{
+   left:0;
+   transform:scale(1.3);
+   transition-duration: 1s;
+ }
+ .bg-div-anim{
+   transform:scale(1);
+   opacity:1;
+   filter: blur(30px) saturate(0);
+   transition-duration:1s;
+ }
+ /*==========================================*/
+ /*===================NEXT ARROW ICON======================*/
+ .next-arr{
+   position:absolute;
+   left:88.7%;
+   top:76%;
+   filter:brightness(.4);
+   transform:rotateZ(90deg);
+   z-index:2;
+   width:6%;
+   height:12%;
+   transition-duration: .2s;
+   opacity:.6;
+ }
+ /*==========================================*/
+ /*===================EXIT ICON======================*/
+.exit{
+  position:absolute;
+  top:77%;
+  left:3%;
+  z-index:4;
+  width:6%;
+  height:12%;
+  opacity:.8;
+  transition-duration: .3s;
+  cursor:pointer;
+}
+.exit:hover{
+  content:url("../icons/exit2.png");
+  opacity:1;
+  transition-duration: .3s;
+}
+.exit-div{
+}
+.exit-lbl{
+  position:absolute;
+  left:4.3%;
+  top:74.6%;
+  opacity:0;
+  font-size: 3vh;
+  transform:rotateZ(45deg);
+  transition-duration: .3s;
+  z-index:4;
+}
+.exit:hover+.exit-lbl{
+  position:absolute;
+  left:7.3%;
+  top:80.5%;
+  opacity:1;
+  transform:rotateZ(45deg);
+  transition-duration: .3s;
+}
+ /*==========================================*/
+ /*===================INVISIBLE BUTTONS======================*/
+ .btn{
+   position:absolute;
+   left:88%;
+   top:76%;
+   width: 3.5vw;
+   height:12vh;
+   opacity:0;
+   background-color: red;
+   z-index: 3;
+   cursor:pointer;
+ }
+.next-btn{
+  left:92%;
+}
+.prev-btn{
+  left:88%;
+}
+.btn:hover~.next-arr{
+  filter:brightness(2);
+  opacity:1;
+}
+.next-btn:hover~.next-arr{
+  transform:rotateZ(0deg);
+  transition-duration: .2s;
+}
+.prev-btn:hover~.next-arr{
+  transform:rotateZ(-180deg);
+  transition-duration: .2s;
+}
