@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Info</title>
+    <link rel="stylesheet" type="text/css" href="../css/info2-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      onload=true;
+      $( document ).ready(function() {
+        $('#main-panel').addClass("main-panel-onload");
+        $('#bg-div').addClass("bg-div-onload");
+        $('#desc1').addClass("desc1-onload");
+        $('#p1-img').addClass("p1-img-default");
+      });
+    </script>
+    <script>
+      var i=0;
+      var delay=400;
+      function toggle(){
+          $('#desc1').removeClass("desc1-onload");
+          $('#desc1').addClass("desc1-onload");
+          setTimeout(function() {
+          }, delay);
+      }
+      function next(){
+        if(i==0){
+          i=1;
+          $('#p1-img').removeClass("p1-img-default");
+          $('#p1-img').addClass("p1-img-next1");
+          $('#desc-li1,.desc-li3').css({'opacity':'0','transition-duration':'1s'});
+          setTimeout(function() {
+            $('#desc-li2').css({'opacity':'1','transition-duration':'1s'});
+          }, delay);
+        }
+        else if(i==1){
+          i=2;
+          $('#p1-img').removeClass("p1-img-next1");
+          $('#p1-img').addClass("p1-img-next2");
+          $('#desc-li1,.desc-li2').css({'opacity':'0','transition-duration':'1s'});
+          setTimeout(function() {
+            $('#desc-li3').css({'opacity':'1','transition-duration':'1s'});
+          }, delay);
+        }
+      }
+      function prev(){
+        if(i==2){
+          i=1;
+          $('#p1-img').removeClass("p1-img-next2");
+          $('#p1-img').addClass("p1-img-next1");
+          $('#desc-li1,.desc-li3').css({'opacity':'0','transition-duration':'1s'});
+          setTimeout(function() {
+            $('#desc-li2').css({'opacity':'1','transition-duration':'1s'});
+          }, delay);
+        }
+        else if(i==1){
+          i=0;
+          $('#p1-img').removeClass("p1-img-next1");
+          $('#p1-img').addClass("p1-img-default");
+          $('#desc-li3,.desc-li2').css({'opacity':'0','transition-duration':'1s'});
+          setTimeout(function() {
+            $('#desc-li1').css({'opacity':'1','transition-duration':'1s'});
+          }, delay);
+        }
+      }
+      function loadHome(){
+        location.href="../index.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="bg-div" class="bg-div"></div>
+    <label class="label-top"></label>
+    <label class="label-bottom"></label>
+    <div id="main-panel" class="main-panel">
+      <div id="p1-img" class="p1-img"></div>
+    </div>
+    <div id="desc1" class="desc1">
+      <li id="desc-li1" class="desc-li1">
+        <ul>Guild Wars 2 è un videogioco MMORPG ambientato in un mondo fantasy.</ul>
+        <ul>Il gioco è venduto inizialmente in modalità B2P: per giocare è necessario soltanto acquistare il gioco, senza pagare un canone mensile. A poche ore dalla data dell'espansione Heart of Thorns, ArenaNet ha utilizzato il palco del PAX Prime per annunciare che Guild Wars 2 diventa free-to-play.</ul>
+      </li>
+      <li id="desc-li2" class="desc-li2">
+        <ul>Il sistema di controllo è stato cambiato in maniera significativa. In particolare sarà possibile saltare e nuotare, le magie saranno attivabili in movimento, ed è stato eliminato il movimento del personaggio con il mouse. È stato eliminato anche il BodyBlock, meccanica che poteva impedire il movimento ad altri giocatori posizionandovisi davanti, sostituendolo da altre meccaniche quali la paralisi, lo stordimento e l'abbattimento.</ul>
+        <ul>Uno dei cambiamenti maggiori del gioco sarà la possibilità di avere un mondo persistente; sarà possibile incontrare altri giocatori anche nelle aree esplorabili, mentre nel primo Guild Wars era possibile solo negli avamposti. Il gioco sarà su più server o 'mondi', ma i giocatori, per quanto concerne il PVE, non saranno vincolati ad un mondo specifico.</ul>
+        <ul>Il modello delle missioni è stato modificato per rendere più realistica l'esperienza dei giocatori. Vagando nel gioco ci si troverà ad imbattersi in eventi come l'assalto di un villaggio da parte di banditi, a cui si potrà decidere se partecipare o meno: se sì, occorrerà soltanto gettarsi nella mischia e alla fine dell'assalto si verrà premiati. Gli eventi, inoltre, potranno concatenarsi ed avere un effetto reale nel mondo, ad esempio il villaggio distrutto dovrà essere riconquistato prima di poter interagire con gli abitanti scappati durante l'assalto (conseguenza dell'evento precedente). Gli eventi possono essere lunghe catene che si ripetono all'infinito in conseguenza delle azioni dei giocatori o attivarsi ciclicamente, oppure attivarsi in particolari occasioni. Al lancio del gioco è stata confermata la presenza di più di 1500 eventi dinamici.</ul>
+      </li>
+      <li id="desc-li3" class="desc-li3">
+        <ul>Il sistema di gilde verrà potenziato rispetto al primo capitolo. Tra le caratteristiche già annunciate ci sono la possibilità di conquistare e difendere avamposti nel PVP, e guadagnare titoli quando la propria gilda raggiunge determinati obiettivi. Saranno inoltre accessibili anche tramite pagina web e applicazione per iPhone/android la chat e il calendario di gilda. Ogni personaggio del proprio account potrà appartenere ad una gilda differente, ma non sarà necessario ricevere più inviti per far appartenere più personaggi del proprio account alla stessa gilda. Più personaggi di uno stesso account che appartengono alla stessa gilda verranno visti come un unico personaggio.</ul>
+        <ul>Sarà presente nel gioco una casa d'aste che permetterà la messa in vendita di oggetti o di fare offerte d'acquisto. Sarà inoltre possibile consultare lo storico delle vendite per ogni tipo di oggetto. Tranne per la messa in vendita di un oggetto, tutte le altre operazioni saranno effettuabili anche tramite pagina web o applicazioni per iPhone e android.</ul>
+      </li>
+    </div>
+    <div onclick="next()" class="next-btn btn"></div>
+    <div onclick="prev()" class="prev-btn btn"></div>
+    <img class="next-arr" src="../icons/arrow2.png">
+    <img onclick="loadHome()" class="exit" src="../icons/exit.png">
+    <label class="exit-lbl">HOME</label>
+  </body>
+</html>
